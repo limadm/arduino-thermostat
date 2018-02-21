@@ -58,7 +58,7 @@ void debounce() {
   input = input/2 + (digitalRead(KEY) ? 0 : 32);
   if (input > 250) {
     byte nopts = sizeof(Th_opts) / sizeof(Th_opts[0]);
-    opt = constrain(opt+1, 0, nopts);
+    opt = (opt+1) % nopts;
     Th = Th_opts[opt];
     blinkTh();
   }
