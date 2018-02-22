@@ -55,8 +55,8 @@ void loop() {
 
 void debounce() {
   static byte input = 0;
-  input = input/2 + (digitalRead(KEY) ? 0 : 32);
-  if (input > 250) {
+  input = input/2 + (digitalRead(KEY) ? 0 : 128);
+  if (input > 253) {
     byte nopts = sizeof(Th_opts) / sizeof(Th_opts[0]);
     opt = (opt+1) % nopts;
     Th = Th_opts[opt];
